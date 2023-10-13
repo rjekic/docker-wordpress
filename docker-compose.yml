@@ -41,7 +41,9 @@ services:
     # https://docs.docker.com/compose/compose-file/#image
     # Feel free to add a version of WordPress
     # I.e. wordpress:5.2.0
-    image: wordpress:latest
+    # image: wordpress:latest
+    build: ./wordpress/
+    image: wordpress
     # Define restart policy
     # https://docs.docker.com/compose/compose-file/#restart
     restart: always
@@ -51,7 +53,8 @@ services:
     # Useful for file edits
     # I like to map only wp-content
     # We should not care about WP core files
-    volumes: ["./:/var/www/html/wp-content"]
+    volumes:
+      - ./:/var/www/wp-content
     # Add environment variables
     # https://docs.docker.com/compose/compose-file/#environment
     environment:
