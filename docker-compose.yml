@@ -54,7 +54,7 @@ services:
     # I like to map only wp-content
     # We should not care about WP core files
     volumes:
-      - ./:/var/www/wp-content
+      - ./:/var/www/html/wp-content
     # Add environment variables
     # https://docs.docker.com/compose/compose-file/#environment
     environment:
